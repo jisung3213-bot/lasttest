@@ -4,6 +4,7 @@ services:
     container_name: ho_backend
     ports:
       - "8000:8000"
+    restart: unless-stopped
 
   frontend:
     build: ./frontend
@@ -14,3 +15,4 @@ services:
       - API_URL=http://backend:8000/recommend
     depends_on:
       - backend
+    restart: unless-stopped
