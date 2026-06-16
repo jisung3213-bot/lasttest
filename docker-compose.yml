@@ -9,7 +9,7 @@ services:
     build: ./frontend
     container_name: ho_frontend
     ports:
-      - "8501:8501"
+      - "80:8501"
     environment:
       - API_URL=http://backend:8000/recommend
     depends_on:
