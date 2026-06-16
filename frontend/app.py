@@ -253,6 +253,20 @@ def show_quiz_page():
     st.divider()
 
     with st.form(key=f"{scenario_key}_quiz_form"):
+        st.markdown("### 사용자 정보")
+
+        user_name = st.text_input(
+            "이름을 입력하세요.",
+            key=f"{scenario_key}_user_name"
+        )
+
+        student_id = st.text_input(
+            "학번을 입력하세요.",
+            key=f"{scenario_key}_student_id"
+        )
+
+        st.divider()
+
         answers = []
 
         for question in questions:
