@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+import os
 import requests
 import streamlit as st
 
@@ -15,7 +16,10 @@ st.set_page_config(
 )
 
 # Docker Compose 기준
-API_URL = "http://backend:8000/recommend"
+API_URL = os.getenv(
+    "API_URL",
+    "http://127.0.0.1:8000/recommend"
+)
 
 # 로컬 테스트용
 # API_URL = "http://localhost:8000/recommend"
